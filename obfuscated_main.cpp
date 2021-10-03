@@ -318,6 +318,7 @@ private:
 
 bool check_password(std::size_t psw1, const std::string& psw = "Enter your password")
 {
+    print_sentence(CHECKING_PASSWORD);
     StudyPRNG custom_prng(std::random_device{}());
 
     std::list<int> l = string_to_int_list(psw);

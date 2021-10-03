@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8 FATAL_ERROR)
 
-project(Obfuscation LANGUAGES CXX)
+project(obfuscated_change_password LANGUAGES CXX)
 
 add_executable(${PROJECT_NAME} "obfuscated_main.cpp")
 
