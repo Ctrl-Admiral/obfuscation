@@ -1,16 +1,11 @@
 #!/bin/bash
 
-cur_dir=`dirname "$0"`
+cur_dir=`pwd`
 
-[[ -d $cur_dir/build ]] && rm -r $cur_dir/build
+rm -rf $cur_dir/build
+mkdir $cur_dir/build
 
-mkdir build
-
-cmake \
-    -S $cur_dir \
-    -B $cur_dir/build \
-    -D CMAKE_BUILD_TYPE=Release \
-    -D CMAKE_CXX_FLAGS="-static"
+cmake -S $cur_dir -B $cur_dir/build -D CMAKE_BUILD_TYPE=Release -D CMAKE_CXX_FLAGS="-static -funroll-loops"
 
 cmake --build $cur_dir/build --target clean
 cmake --build $cur_dir/build --target all
